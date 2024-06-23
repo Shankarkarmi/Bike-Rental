@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Shop Java Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .code {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bike Shop Java Code</h1>
+    <p>Java code for a bike shop simulation.</p>
+    
+    <h2>Bikesshop.java</h2>
+    <pre class="code">
+        <code>
+            // Paste your Bikesshop.java code here
+          /*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.bikesshop;
+
+/**
+ *
+ * @author Bunty
+ */
+public class Bikesshop {
+    public static class Bike{
+        private String id;
+        private String model;
+        private String color;
+        private boolean isAvailable;
+        
+        public Bike(String id,String model,String color){
+            this.id=id;
+            this.model=model;
+            this.color=color;
+            this.isAvailable=true;
+        }
+        public String getId(){
+            return id;
+        }
+        public void setId(String id){
+            this.id=id;
+        } 
+        public String getColor(){
+            return color;
+        }
+        public void setColor(String id){
+            this.id=color;
+        }
+        public String getModel(){
+            return model;
+        }
+        public void setModel(String id){
+            this.id=model;
+        }
+        public void setIsAvailable(boolean isAvailable){
+            this.isAvailable=isAvailable;
+        }
+        public void returnBike(){
+            this.isAvailable=true;
+            System.out.println("Bike has been return.");
+        }
+        public void rentBike(){
+            if(isAvailable){
+                this.isAvailable=false;
+                System.out.println("Bike"+id+" has been rented.");
+            }
+            else{
+                System.out.println("Bike"+id+" is not available.");
+            }
+        }
+        @Override
+        public String toString(){
+            return "Bike{ id= "+id+" ,model= "+model+" ,color= "+color+" ,isAvailable "+isAvailable+" ,}";
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+        Bike bike = new Bike("123", "Mountain Bike", "Red");
+        System.out.println("Hello World!");
+        bike.getId();// will not generate ooutput 
+        
+        System.out.println(bike.toString());
+        System.out.println(bike);
+        
+        bike.rentBike();
+        System.out.println(bike);
+        
+        bike.returnBike();
+        System.out.println(bike);
+        
+    }
+}
+
+        </code>
+    </pre>
+    
+    <h2>Main.java</h2>
+    <pre class="code">
+        <code>
+            // Paste your Main.java code here
+          /*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.bikesshop;
+
+import java.util.Scanner;
+/**
+ *
+ * @author Bunty
+ */
+public class Main {
+    public static void main(String[] args) {
+        Bikesshop.Bike bike1 = new Bikesshop.Bike("001", "Mountain Bike", "Red");
+        Bikesshop.Bike bike2 = new Bikesshop.Bike("002", "Road Bike", "Blue");
+        Bikesshop.Bike bike3 = new Bikesshop.Bike("003", "Hybrid Bike", "Green");
+        Bikesshop.Bike bike4 = new Bikesshop.Bike("004", "Electric Bike", "Yellow");
+        Bikesshop.Bike bike5 = new Bikesshop.Bike("005", "Folding Bike", "Black");
+        Bikesshop.Bike bike6 = new Bikesshop.Bike("006", "BMX Bike", "White");
+        Bikesshop.Bike bike7 = new Bikesshop.Bike("007", "Cruiser Bike", "Pink");
+        Bikesshop.Bike bike8 = new Bikesshop.Bike("008", "Kids Bike", "Purple");
+        Bikesshop.Bike bike9 = new Bikesshop.Bike("009", "Touring Bike", "Orange");
+        Bikesshop.Bike bike10 = new Bikesshop.Bike("010", "Recumbent Bike", "Brown");
+        Bikesshop.Bike bike11 = new Bikesshop.Bike("011", "Fat Bike", "Gray");
+        Bikesshop.Bike bike12 = new Bikesshop.Bike("012", "Tandem Bike", "Silver");
+        Bikesshop.Bike bike13 = new Bikesshop.Bike("013", "Track Bike", "Gold");
+        Bikesshop.Bike bike14 = new Bikesshop.Bike("014", "Fixed Gear Bike", "Copper");
+        Bikesshop.Bike bike15 = new Bikesshop.Bike("015", "Single Speed Bike", "Bronze");
+        Bikesshop.Bike bike16 = new Bikesshop.Bike("016", "Cyclocross Bike", "Maroon");
+        Bikesshop.Bike bike17 = new Bikesshop.Bike("017", "Gravel Bike", "Teal");
+        Bikesshop.Bike bike18 = new Bikesshop.Bike("018", "Triathlon Bike", "Cyan");
+        Bikesshop.Bike bike19 = new Bikesshop.Bike("019", "Cargo Bike", "Magenta");
+        Bikesshop.Bike bike20 = new Bikesshop.Bike("020", "Dirt Jump Bike", "Lime");
+
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Welcome to the Bike Shop!");
+        while (true) {
+            System.out.println("\nMenu:");
+            System.out.println("1. Rent a Bike");
+            System.out.println("2. Return a Bike");
+            System.out.println("3. View Bike Details");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+            
+            System.out.print("Enter your Bike - Id : ");
+            String bikeid = scanner.nextLine();
+            
+            Bikesshop.Bike selectedbike = getBikebyId(bikeid,bike1,bike2,bike3,bike4,bike5,bike6,bike7,bike8,bike9,bike10,bike11,bike12,bike13,bike14,bike15,bike16,bike17,bike18,bike19,bike20);
+            
+            if(selectedbike == null){
+               System.out.println("Bike ID not found. Please try again.");
+                continue; 
+            }
+            switch (choice) {
+                case 1 -> selectedbike.rentBike();
+                case 2 -> selectedbike.returnBike();
+                case 3 -> System.out.println(selectedbike);
+                case 4 -> {
+                    System.out.println("Thank you for visiting the Bike Shop!");
+                    scanner.close();
+                    return;
+                }
+                default -> System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+            }
+        }
+    }
+    
+    private static Bikesshop.Bike getBikebyId(String bikeid,Bikesshop.Bike...bikes){
+        for(Bikesshop.Bike bike : bikes){
+            if(bike.getId().equals(bikeid)){
+                return bike;
+            }
+        }
+    return null;
+            
+    }
+}
+        </code>
+    </pre>
+</body>
+</html>
